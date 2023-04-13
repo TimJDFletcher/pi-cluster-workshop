@@ -73,7 +73,7 @@ kubectl --namespace kubernetes-dashboard patch svc kubernetes-dashboard -p '{"sp
 1. Connect to the PiCluster Wifi network (for password: see the sticker on the router)
 2. Ensure you have access to the cluster via kubectl, for that you will need the kube config file
 ```bash
-scp pi@rasoberrypi-1:~/.kube/config ~/.kube/config
+scp pi@raspberrypi-1:~/.kube/config ~/.kube/config
 ```
 
 3. Take note of the port via the command:
