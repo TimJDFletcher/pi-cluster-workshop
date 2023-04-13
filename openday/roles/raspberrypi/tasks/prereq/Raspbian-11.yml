@@ -1,0 +1,16 @@
+---
+- name: Activating cgroup support
+  lineinfile:
+    path: /boot/cmdline.txt
+    regexp: '^((?!.*\bcgroup_memory=1 cgroup_enable=memory\b).*)$'
+    line: '\1 cgroup_memory=1 cgroup_enable=memory'
+    backrefs: true
+  notify: reboot
+
+- name: Activating spi support
+  lineinfile:
+    path: /boot/config.txt
+    regexp: '#dtparam=spi=on'
+    line: 'dtparam=spi=on'
+    backrefs: true
+  notify: reboot
